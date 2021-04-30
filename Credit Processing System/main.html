@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+      <link href="style.css" rel="stylesheet">
+     <script src="script.js" ></script>
+   </head>
+<BODY>
+<div class="container" id="container">
+  <div class="personal-container">
+    <div class="pick-card">
+      <input type="radio" id="visa" name="card" value="visa" onclick="card()" checked>
+      <label for="visa">Visa</label>
+      <input type="radio" id="master" name="card" value="master" onclick="card()">
+      <label for="huey">Master</label>
+
+    </div>
+
+    <div class="first-div" style="display: flex;flex-direction: row;">
+      <input type="text" maxlength="8" id="cardName" onkeypress="return (event.charCode > 64 && 
+                    event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" placeholder="Name" oninput="cardName()">
+      <div style="margin:0;padding:0;margin-right:20px"></div>
+      <input type="text" id="cardSurname" onkeypress="return (event.charCode > 64 && 
+                event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" placeholder="Surname" oninput="cardSurname()">
+    </div>
+    <div class="second-div">
+      <input type="text" maxlength="16" id="cardNumber" placeholder="Credit Card Number" oninput="cardNumber(); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" />
+    </div>
+
+    <div style="display: flex;flex-direction: row;">
+      <div class="third-div">
+        <div class="exp">
+          <p>Expirition Date</p>
+        </div>
+        <div class="expirition">
+          <select name="mm" id="mm" class="select-item" oninput="cardMm()">
+            <option>mm</option>
+            <option value="01">01</option>
+            <option value="02">02</option>
+            <option value="03">03</option>
+            <option value="04">04</option>
+            <option value="05">05</option>
+            <option value="06">06</option>
+            <option value="07">07</option>
+            <option value="08">08</option>
+            <option value="09">09</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+
+          </select>
+          <select name="yy" id="yy" class="select-item" oninput="cardYy()">
+            <option>yy</option>
+            <option value="20">2020</option>
+            <option value="21">2021</option>
+            <option value="22">2022</option>
+            <option value="23">2023</option>
+            <option value="24">2024</option>
+            <option value="25">2025</option>
+            <option value="26">2026</option>
+            <option value="27">2027</option>
+            <option value="28">2028</option>
+          </select>
+        </div>
+      </div>
+      <div class="fourth-div">
+        <div class="exp">
+          <p>CVV</p>
+        </div>
+        <div class="expirition">
+          <input class="cvv" type="text" id="cardNumber" maxlength="3" oninput="cardNumber(); this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" />
+        </div>
+      </div>
+    </div>
+    <div class="card" id="card">
+      <div class="card-position">
+        <div class="card-position">
+          <p class="card-number" id="displayNumber"></p>
+        </div>
+        <div style="display: flex;flex-direction: row;">
+          <div class="card-position">
+            <p class="card-name" id="displayName"></p>
+          </div>
+          <div class="card-position">
+            <p class="card-surname" id="displaySurname"></p>
+          </div>
+          <div class="card-position">
+            <p class="card-mm" id="displayMm"></p>
+          </div>
+          <div class="card-position">
+            <p class="card-yy" id="displayYy"></p>
+          </div>
+        </div>
+        <div class="card-position">
+            <p class="card-cvv" id="CVV"></p>
+          </div>
+        <img class="sim" id="sim" src="https://i.hizliresim.com/MdZ3Cf.png" alt="">
+        <div class="card-position">
+          <img class="logo" id="logo" src="https://i.hizliresim.com/Lx4G72.png" alt="">
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+      <form>
+         <input onClick="window.location.href='pay.html'" type="submit" Value="Checkout">
+      </form>
+</BODY>
+</html>
+
